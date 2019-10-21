@@ -10,6 +10,23 @@ author =
     }
 ```
 
+You can also use pattern matching for nested records.
+
+Say you have this record here:
+author :: { name :: String, interests :: Array String, associatedAuthor: Author}
+
+You can do something similar to this:
+
+```purescript
+authorBob = {
+    name: "Bob",
+    interests: ["Functional Programming", "JavaScript"]
+    associatedAuthor: authorBob
+
+getAssociatedAuthor :: Author -> Author
+getAssociatedAuthor { associatedAuthor: otherAuthor } = otherAuthor
+```
+
 Fields of records can be accessed using a dot, followed by the label of the field to access:
 
 ```purescript
