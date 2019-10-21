@@ -569,6 +569,8 @@ maybeSum a b = do
 
 When using `do` notation, there must be a corresponding instance of the `Monad` type class for the return type.
 
+You can also use wrap it in `return` here as `return` is the official method for the `Monad` type class.
+
 Statements can have the following form:
 
 - `a <- x` which desugars to `x >>= \a -> ...`
