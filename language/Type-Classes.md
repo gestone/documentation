@@ -180,3 +180,17 @@ Other classes
 - [`Partial`](https://pursuit.purescript.org/builtins/docs/Prim#t:Partial)
 - [`Fail`](https://pursuit.purescript.org/builtins/docs/Prim.TypeError#t:Fail)
 - [`Warn`](https://pursuit.purescript.org/builtins/docs/Prim.TypeError#t:Warn)
+
+### Monad Example
+
+Below showcases the power of the Monad in an example:
+
+monadicBindExample :: Maybe String -> Maybe String
+monadicBindExample foo = do
+    bar <- process foo
+    baz <- processBar baz
+    return baz
+
+`process` and `processBar` can take in a `Maybe String` and return a `Maybe String`. In the case that nothing is returned,
+the method short circuits and an empty `Maybe` is returned.
+
