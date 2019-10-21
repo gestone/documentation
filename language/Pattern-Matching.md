@@ -201,3 +201,13 @@ positiveLessThanFive mInt
   , x < 5 = true
   | otherwise = false
 ```
+
+negativeLessThanFive :: Maybe Int -> Boolean
+```purescript
+negativeLessThanFive mInt
+  | Just x <- mInt
+  , x > 0
+  , x < 5 = false
+  | otherwise = true
+```
+
